@@ -1,10 +1,16 @@
-FROM python:3.11-slim-buster
+FROM python:3.11-slim
 
-WORKDIR /
+RUN pip install poetry
 
-COPY requirements.txt /requirements.txt
-RUN pip install -r /requirements.txt
 
-COPY src/app.py /app.py
+WORKDIR /app
 
-CMD ["python", "/app.py"]
+COPY pyproject.toml poetry.lock ./
+COPY . .
+
+RUN poetry config virtualenvs.create false && poetry install --no-interaction --no-ansi
+
+ENV PORT=8080
+EXPOSE $PORT
+
+CMD ["sh", "-c", "poetry run functions-framework --target=chat --source=src/test_function_framework.py --port=${PORT}"]

@@ -1,0 +1,6 @@
+langchain
+langchain-community
+langchain-core
+functions-framework
+Flask
+langchain-google-genai

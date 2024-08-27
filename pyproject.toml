@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "spaces-bot"
+version = "0.1.0"
+description = ""
+authors = ["Riddhi Gohil <79389597+gohilriddhi21@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = "^0.2.14"
+langchain-community = "^0.2.12"
+langchain-core = "^0.2.35"
+functions-framework = "^3.8.1"
+flask = "^3.0.3"
+langchain-google-genai = "^1.0.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

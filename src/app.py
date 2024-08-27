@@ -1,16 +1,21 @@
 from flask import Flask, request, jsonify
+from vertexai_model import VertexAIModel
 
 app = Flask(__name__)
+model = VertexAIModel()
 
 def process_message(message):
     if message.lower() == 'hello':
         return 'Hi there!'
     else:
-        return "I don't understand that. Try saying 'hello'."
+        return model.generate_text(message)
 
-@app.route('/messages', methods=['POST'])
+@app.route('/', methods=['GET'])
 def handle_message():
     data = request.get_json()
     message = data['message']
     response = process_message(message)
     return jsonify({'response': response})
+
+if __name__ == '__main__':
+    app.run(port=8080, debug=True)
