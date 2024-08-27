@@ -1,0 +1,2 @@
+poetry add <package>
+poetry add $(cat requirements.txt)
