@@ -13,6 +13,7 @@ langchain-core = "^0.2.35"
 functions-framework = "^3.8.1"
 flask = "^3.0.3"
 langchain-google-genai = "^1.0.10"
+vertexai = "^1.64.0"
 
 
 [build-system]
