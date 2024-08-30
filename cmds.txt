@@ -1,5 +1,9 @@
 poetry add <package>
+<<<<<<< HEAD
 poetry add $(cat requirements.txt)
 
 sudo docker build -t my-chat-bot .
 sudo docker run -p 8080:8080 my-chat-bot
+=======
+poetry add $(cat requirements.txt)
+>>>>>>> 1f48170bb75e9a1d1589de555c7481b08244c39a
